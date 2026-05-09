@@ -1,0 +1,209 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+/* ── Trigger button ── */
+.trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-align: left;
+  font-size: 13px;
+  color: var(--text3);
+  user-select: none;
+  width: 100%;
+}
+.trigger:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.hasValue { color: var(--text1) !important; }
+.triggerIcon { color: var(--accent); flex-shrink: 0; }
+.placeholder { color: var(--text3); }
+
+/* ── Floating panel ── */
+.panel {
+  z-index: 9999;
+  background: var(--bg2);
+  border: 1px solid var(--border2, var(--border));
+  border-radius: var(--r2);
+  padding: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255,255,255,0.04);
+  animation: dtpIn 0.15s cubic-bezier(0.2, 0, 0, 1) both;
+}
+
+@keyframes dtpIn {
+  from { opacity: 0; transform: translateY(-6px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+
+/* ── Month header ── */
+.calHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.monthLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text1);
+  letter-spacing: -0.2px;
+}
+.navBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text2);
+  padding: 4px 6px;
+  border-radius: var(--r1, 6px);
+  display: flex;
+  align-items: center;
+  transition: background 0.12s, color 0.12s;
+}
+.navBtn:hover {
+  background: var(--bg3);
+  color: var(--text1);
+}
+
+/* ── Day-of-week row ── */
+.dowRow {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text3);
+  letter-spacing: 0.4px;
+  margin-bottom: 6px;
+}
+
+/* ── Day grid ── */
+.dayGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.dayBtn {
+  aspect-ratio: 1;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--text1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.12s, color 0.12s;
+  padding: 0;
+  width: 100%;
+  line-height: 1;
+}
+.dayBtn:hover:not(:disabled) { background: var(--bg3); }
+
+.daySelected {
+  background: var(--accent) !important;
+  color: #000 !important;
+  font-weight: 700;
+}
+.dayToday {
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+.dayDisabled {
+  color: var(--text3);
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 14px 0 12px;
+}
+
+/* ── Time area ── */
+.timeArea {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.timeLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text3);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+.timeControls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── Spinner column ── */
+.spinCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.spinBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text3);
+  padding: 3px 6px;
+  border-radius: var(--r1, 6px);
+  display: flex;
+  align-items: center;
+  transition: background 0.12s, color 0.12s;
+  line-height: 1;
+}
+.spinBtn:hover {
+  background: var(--bg3);
+  color: var(--accent);
+}
+.spinVal {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text1);
+  min-width: 38px;
+  text-align: center;
+  background: var(--bg3);
+  border-radius: var(--r1, 6px);
+  padding: 4px 0;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.timeSep {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text2);
+  margin: 0 -2px;
+  padding-bottom: 2px;
+}
+.ampm {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-left: 2px;
+  align-self: center;
+}
+
+/* ── Done button ── */
+.doneBtn {
+  width: 100%;
+  margin-top: 14px;
+  padding: 9px;
+  font-size: 13px;
+}

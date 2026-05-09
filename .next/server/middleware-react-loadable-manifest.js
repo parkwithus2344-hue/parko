@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST="{\"app\\\\add-parking\\\\page.tsx -> tesseract.js\":{\"id\":\"app\\\\add-parking\\\\page.tsx -> tesseract.js\",\"files\":[\"static/chunks/_app-pages-browser_node_modules_tesseract_js_src_index_js.js\"]}}"
