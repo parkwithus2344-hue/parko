@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
@@ -14,9 +14,9 @@ const HIDE_NAV = ['/login', '/register']
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <AppInner />
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
